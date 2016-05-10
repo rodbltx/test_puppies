@@ -1,6 +1,3 @@
-When(/^I navigate to the checkout page$/) do
-  pending
-end
 
 Given(/^I am on the puppy adoption site$/) do
   visit(DetailsPage)
@@ -19,6 +16,8 @@ When(/^I attempt to checkout for puppy "([^"]*)", without (?:a|an) "([^"]*)"$/) 
     when 'Address'
       on(CheckoutPage).checkout('address' => '')
   end
+
+
 end
 
 Then(/^I should see the error message "([^"]*)"$/) do |error_message|
@@ -26,13 +25,25 @@ Then(/^I should see the error message "([^"]*)"$/) do |error_message|
   sleep 8
 end
 
+When(/^I navigate to the checkout page$/) do
+  on(DetailsPage).view_details
+  on(PuppyDetailsPage).open_adoption_page
+  on(PuppyItemsPage).complete_adoption
+end
 
 Then(/^I should see the following payment options:$/) do |table|
-  # table is a table.hashes.keys # => [:pay_type]
-  pending
+  on(CheckoutPage).exist_all_payment_options?(table).should be true
 end
 
 When(/^I complete the adoption of a puppy$/) do
-  pending
+  on(DetailsPage).view_details
+  on(PuppyDetailsPage).open_adoption_page
+  on(PuppyItemsPage).loaded?
+  on(PuppyItemsPage).complete_adoption
+  on(CheckoutPage).loaded?
+  on(CheckoutPage).checkout
 end
 
+Then(/^I should see the text "([^"]*)"$/) do |thanks_message|
+  @browser.text.should include thanks_message
+end

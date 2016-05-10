@@ -22,14 +22,14 @@ Feature: Completing the checkout process
       | Brook      | Name    |
       | Hanna      | Address |
 
-#  Scenario: Adopter should be presented with payment options
-#    When I navigate to the checkout page
-#    Then I should see the following payment options:
-#      | pay_type       |
-#      | Purchase order |
-#      | Credit card    |
-#      | Check          |
-#
-#  Scenario: Thank you message should be displayed when adoption is complete
-#    When I complete the adoption of a puppy
-#    Then I should see the text "Thank you for adopting a puppy"
+  Scenario: Adopter should be presented with payment options
+    When I navigate to the checkout page
+    Then I should see the following payment options:
+      | pay_type       |
+      | Purchase order |
+      | Credit card    |
+      | Check          |
+
+  Scenario: Thank you message should be displayed when adoption is complete
+    When I complete the adoption of a puppy
+    Then I should see the text "Thank you for adopting a puppy"

@@ -16,15 +16,15 @@ Feature: My First Feature
 #    And I complete the adoption form
 #    Then I should see ""
 
-  Scenario Outline: My third Scenarioduslp
-    When I navigate to the webapp
-    And I view details
-    And I click on the adopt button
-    And I check the button "<button_type>"
-    And I complete the adoption form
-    Then I should see the text "<message>"
-    Examples:
-      | button_type     | message                        |
-      | with message    | Thank you for adopting a puppy |
-      | without message |                                |
+#  Scenario Outline: My third Scenarioduslp
+#    When I navigate to the webapp
+#    And I view details
+#    And I click on the adopt button
+#    And I check the button "<button_type>"
+#    And I complete the adoption form
+#    Then I should see the text "<message>"
+#    Examples:
+#      | button_type     | message                        |
+#      | with message    | Thank you for adopting a puppy |
+#      | without message |                                |
 

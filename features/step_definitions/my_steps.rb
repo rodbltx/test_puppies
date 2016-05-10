@@ -23,10 +23,10 @@ And(/^I complete the adoption form$/) do
 
 end
 
-Then(/^I should see the text "([^"]*)"$/) do |expected_message|
-  @browser.text.should include expected_message
-
-end
+# Then(/^I should see the text "([^"]*)"$/) do |expected_message|
+#   @browser.text.should include expected_message
+#
+# end
 
 And(/^I check the button "([^"]*)"$/) do |arg|
 

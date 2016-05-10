@@ -32,4 +32,17 @@ class CheckoutPage
     place_order
   end
 
+  def exist_all_payment_options?(table)
+    table.hashes.each do |pay_type|
+      unless exists_payment_option?(pay_type)
+        return false
+        break
+      end
+    end
+    return true
+  end
+
+  def exists_payment_option?(payment_option)
+    pay_type_element.include? payment_option['pay_type']
+  end
 end
